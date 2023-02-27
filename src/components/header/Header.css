@@ -8,7 +8,7 @@
 
 .navbar {
   /*background: #13293d;*/
-  background: #180c1d;
+  background: transparent;
   height: 5.25rem;
   display: flex;
   justify-content: center;
