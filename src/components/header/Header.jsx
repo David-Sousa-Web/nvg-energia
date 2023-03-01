@@ -21,6 +21,7 @@ export default function Header() {
 
   return (
     <nav className={navbar ? 'navbar active' : 'navbar'}>
+
       <div className='navbar-container'>
         <a href="#Home" className='navbar-logo'>
           <img src='./assets/Teste 2.png' alt=''/>

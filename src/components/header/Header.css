@@ -11,6 +11,7 @@
   background: transparent;
   height: 5.25rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
@@ -18,6 +19,7 @@
   top: 0;
   z-index: 999;
   transition: initial;
+  height: 100px;
 }
 
 .navbar.active{
@@ -36,8 +38,8 @@
 
 .navbar-logo img{
   margin-left: 20px;
-  height: 150px;
-  width: 100%;
+  height: 120px;
+  width: 170px;
   cursor: pointer;
   justify-self: start;
   display: flex;
