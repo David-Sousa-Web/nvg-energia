@@ -17,7 +17,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 40px; 
 }
 
 .sobre__titulo {
@@ -93,5 +93,58 @@
   position: relative;
   height: 800px;
   z-index: +1;
+  object-fit: cover;
  }
 
+.faleconosco-img{
+  background-image: url("https://live.staticflickr.com/65535/52733060218_d894d8ac5b_h.jpg");
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 3px solid #FF5733
+}
+
+
+.fundoconosco-text{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  z-index: 20;
+}
+.btn{
+  font-weight: 100;
+  font-size: 14px;
+  color: #fff;
+  background-color: transparent;
+  padding: 10px 30px;
+  border: solid #f4a261 2px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 1px;
+  transition : 777ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+  .btn:hover{
+
+    transition : 777ms;
+    padding: 10px 26px;
+    transform : translateY(-0px);
+    background-color: #f4a261;
+    color: white;
+    border: solid 2px #f4a261;
+  }
