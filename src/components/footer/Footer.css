@@ -1,5 +1,62 @@
 .footer-container{
   width: 100%;
-  height: 300px;
+  height: 200px;
   background-color: #180c1d;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-logo{
+  width: 200px;
+  height: 200px;
+}
+
+.p-footer{
+  padding-top: 10px;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 200;
+  width: 85%;
+}
+
+.footer-content{
+  display: flex;
+  gap: 40px;
+}
+
+.footer-sobre{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-sobre-content{
+  text-decoration: none;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+}
+
+.logo-nvg{
+  font-size: 32px;
+  font-weight: 900;
+  color: #000000;
+}
+
+.logo-energia{
+  font-size: 26px;
+  font-weight: 300;
+  color: orange;
+}
+
+.icons-container-footer{
+  display: flex;
+  gap: 20px;
+}
+
+.icons-footer{
+  color: white;
+  font-size: 18px;
 }
