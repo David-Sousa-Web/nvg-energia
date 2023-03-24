@@ -6,6 +6,7 @@ import Sobre from './components/quemsomos/Sobre';
 import Servicos from './components/servicos/Servicos';
 import Contato from './components/contato/Contato';
 import Footer from './components/footer/Footer';
+import Projetos from './components/projetos/Projetos';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <HomeContent/>
         <Sobre/>
         <Servicos/>
+        <Projetos/>
         <Contato/>
         <Footer/>
       </Router>    
