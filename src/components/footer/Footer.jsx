@@ -10,9 +10,9 @@ export default function Footer() {
       </div>
       <div className='footer-content'>
         <div className='footer-sobre'>
-          <a href="" className='footer-sobre-content'>Sobre</a>
-          <a href="" className='footer-sobre-content'>projetos</a>
-          <a href="" className='footer-sobre-content'>inicio</a>
+          <a href="#quem-somos" className='footer-sobre-content'>Sobre</a>
+          <a href="#Servicos" className='footer-sobre-content'>projetos</a>
+          <a href="#Home" className='footer-sobre-content'>inicio</a>
         </div>
         <div className='footer-sobre'>
           <p className='footer-sobre-content'>termos</p>
@@ -23,15 +23,7 @@ export default function Footer() {
           <p className='footer-sobre-content'>contate-nos</p>
           <p className='footer-sobre-content'>contato@nvgenergia.com.br</p>
           <div className='icons-container-footer'>
-            <a href='https://www.linkedin.com/in/david-sousa-dev/' className='icons-footer' target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-
-            <a href='https://github.com/David-Sousa-Web' className='icons-footer' target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-
-            <a href='https://www.instagram.com/david01sousa/' className='icons-footer' target="_blank" rel="noreferrer">
+            <a href='https://www.instagram.com/nvg.energia/' className='icons-footer' target="_blank" rel="noreferrer">
               <i class="fa-brands fa-instagram"></i>
             </a>   
           </div>

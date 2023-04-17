@@ -32,14 +32,6 @@ export default function Contato() {
                 </div>
 
                 <div className='social-media'>
-                  <a href='https://www.linkedin.com/in/david-sousa-dev/' className='icon-circle' target="_blank" rel="noreferrer">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                  </a>
-
-                  <a href='https://github.com/David-Sousa-Web' className='icon-circle' target="_blank" rel="noreferrer">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-
                   <a href='https://www.instagram.com/david01sousa/' className='icon-circle' target="_blank" rel="noreferrer">
                     <i class="fa-brands fa-instagram"></i>
                   </a>
@@ -79,15 +71,7 @@ export default function Contato() {
                   <span>Barueri, SP</span>
                 </div>
                 <div className='social-media'>
-                  <a href='https://www.linkedin.com/in/david-sousa-dev/' className='icon-circle' target="_blank" rel="noreferrer">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                  </a>
-
-                  <a href='https://github.com/David-Sousa-Web' className='icon-circle' target="_blank" rel="noreferrer">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-
-                  <a href='https://www.instagram.com/david01sousa/' className='icon-circle' target="_blank" rel="noreferrer">
+                  <a href='https://www.instagram.com/nvg.energia/' className='icon-circle' target="_blank" rel="noreferrer">
                     <i class="fa-brands fa-instagram"></i>
                   </a>                 
                 </div>
@@ -141,7 +125,6 @@ export default function Contato() {
                 <div className='col'>
                   <div className='form-group-button'>
                     <button className='primary' type="submit" disabled={state.submitting}>Enviar</button>
-
                   </div>
                 </div>
                 {/*<div className='message-send'>{result ? <Result/> : null}</div>*/}

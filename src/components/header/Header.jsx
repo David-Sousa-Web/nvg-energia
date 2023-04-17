@@ -39,13 +39,13 @@ export default function Header() {
           </li>
 
           <li className='nav-item'>
-            <a href='#Sobre' className='nav-links' onClick={closeMobileMenu}>
+            <a href='#quem-somos' className='nav-links' onClick={closeMobileMenu}>
               Quem somos
             </a>
           </li>
 
           <li className='nav-item'>
-            <a href='#Portfolio' className='nav-links' onClick={closeMobileMenu}>
+            <a href='#Servicos' className='nav-links' onClick={closeMobileMenu}>
               Nossos serviços 
             </a>
           </li>

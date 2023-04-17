@@ -3,7 +3,7 @@ import './HomeContent.css'
 
 export default function HomeContent() {
   return (
-    <section className='home'>
+    <section id='Home' className='home'>
       <img className='fundo' src="./assets/foto-01_dia_do_engenheiro_elétrico - Editado - Editado (1).png" alt="fundo" />
       <div className='homecontainer'>
         <h1><span>NVG</span> Energia</h1>

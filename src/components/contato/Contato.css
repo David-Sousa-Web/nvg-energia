@@ -226,6 +226,7 @@ textarea:focus{
   justify-content: flex-end;
   align-items: flex-end;
   margin-right: 40px;
+  padding-top: 80px;
 }
 
 .primary {     
@@ -252,7 +253,7 @@ textarea:focus{
   height: 100%;
   right: 0;
   z-index: -1;
-  background-color: rgba(1,6,18,.9);
+  background-color: rgba(131, 45, 26, 1);
   border-radius: 5px;
   transition: all 0.3s ease;
 }

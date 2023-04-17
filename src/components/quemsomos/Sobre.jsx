@@ -39,7 +39,7 @@ export default function Sobre() {
         <div className='fundoconosco-text'>
           <h1>PORQUE A NVG ENERGIA</h1>
           <p>A Nvg Energia tem equipes formadas por profissionais altamente capacitados e treinados para oferecer para você o melhor serviço Elétrico.</p>
-          <a href="" className='btn'>Fale Conosco</a>
+          <a href="#Contato" className='btn'>Fale Conosco</a>
         </div>
       </div>
     </>
