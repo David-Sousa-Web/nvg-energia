@@ -18,12 +18,12 @@ export default function Contato() {
                 <p>preencha o formulário e eu entrarei em contato com você em até 24 horas</p>
                 <div className='icon-text'>
                   <i class="fa-solid fa-phone" ></i>
-                  <span>(11) 98657-6360</span>
+                  <span>(11) 994399940</span>
                 </div>
                             
                 <div className='icon-text'>
                   <i class="fa-solid fa-envelope" ></i>
-                  <span>contato@nvgenergia.com.br</span>
+                  <span>Nvgenergia@gmail.com</span>
                 </div>
 
                 <div className='icon-text'>
@@ -58,12 +58,12 @@ export default function Contato() {
 
                 <div className='icon-text'>
                   <i class="fa-solid fa-phone" ></i>
-                  <span>(11) 98657-6360</span>
+                  <span>(11) 994399940</span>
                 </div>
 
                 <div className='icon-text'>
                   <i class="fa-solid fa-envelope" ></i>
-                  <span>contato@nvgenergia.com.br</span>
+                  <span>Nvgenergia@gmail.com</span>
                 </div>
 
                 <div className='icon-text'>
