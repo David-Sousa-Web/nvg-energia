@@ -4,7 +4,7 @@ import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contato() {
 
-  const [state, handleSubmit] = useForm("mnqyzyyw");
+  const [state, handleSubmit] = useForm("xqkvkjlv");
 
   if (state.succeeded) {
       return (
