@@ -1,0 +1,79 @@
+.processo {
+  background: var(--pedra-200);
+}
+
+.processo .section-title {
+  max-width: 760px;
+}
+
+.processo__lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: clamp(48px, 6vw, 80px);
+  counter-reset: etapa;
+}
+
+.etapa {
+  position: relative;
+  padding-top: 36px;
+  border-top: 1px solid var(--tinta);
+}
+
+/* Marcador de cota no início de cada etapa */
+.etapa::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  background: var(--pedra-200);
+  border: 1px solid var(--tinta);
+  transform: rotate(45deg);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.etapa:hover::before {
+  background: var(--ocre);
+  border-color: var(--ocre);
+}
+
+.etapa__num {
+  font-family: var(--serif);
+  font-size: 3.4rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1;
+  color: var(--pedra-400);
+}
+
+.etapa h3 {
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.etapa p {
+  margin-top: 10px;
+  color: var(--tinta-60);
+  font-weight: 300;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 960px) {
+  .processo__lista {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .processo__lista {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+}

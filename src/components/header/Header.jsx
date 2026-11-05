@@ -1,65 +1,68 @@
-import React, {useState} from 'react'
-import './Header.css'
+import React, { useEffect, useState } from 'react';
+import { FiArrowRight } from 'react-icons/fi';
+import './Header.css';
+
+const links = [
+  { href: '#inicio', label: 'Início' },
+  { href: '#sobre', label: 'Sobre' },
+  { href: '#servicos', label: 'Serviços' },
+  { href: '#projetos', label: 'Projetos' },
+  { href: '#contato', label: 'Contato' },
+];
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const [click, setClick] = useState(false);
-  const [navbar, setNavbar] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  }, [menuOpen]);
 
-  const changeBackground = () =>{
-    if(window.scrollY >= 300){
-        setNavbar(true)
-    }else{
-        setNavbar(false)
-    }
-  };
-
-  window.addEventListener('scroll', changeBackground);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className={navbar ? 'navbar active' : 'navbar'}>
-
-      <div className='navbar-container'>
-        <a href="#Home" className='navbar-logo'>
-          <img src='./assets/Teste 2.png' alt=''/>
+    <header className={`header ${scrolled ? 'header--scrolled' : ''} ${menuOpen ? 'header--open' : ''}`}>
+      <div className='container header__inner'>
+        <a href='#inicio' className='brand' onClick={closeMenu} aria-label="Otto's Arquitetura e Engenharia — início">
+          <img className='brand__mark' src='./assets/ottos-mark-dark.png' alt='' />
+          <span className='brand__text'>
+            <span className='brand__name'>Otto's</span>
+            <span className='brand__tag'>Arquitetura &amp; Engenharia</span>
+          </span>
         </a>
 
-        <div className='menu-icon' onClick={handleClick}>
-          <i className={click ?'fas fa-times' : 'fas fa-bars'} />             
-        </div>
+        <nav className='nav' aria-label='Navegação principal'>
+          <ul className='nav__list'>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className='nav__link' onClick={closeMenu}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a href='#contato' className='btn btn--solid nav__cta' onClick={closeMenu}>
+            Orçamento <FiArrowRight />
+          </a>
+        </nav>
 
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <a href='#Home' className='nav-links' onClick={closeMobileMenu}>
-              Inicio  
-            </a>
-          </li>
-
-          <li className='nav-item'>
-            <a href='#quem-somos' className='nav-links' onClick={closeMobileMenu}>
-              Quem somos
-            </a>
-          </li>
-
-          <li className='nav-item'>
-            <a href='#Servicos' className='nav-links' onClick={closeMobileMenu}>
-              Nossos serviços 
-            </a>
-          </li>
-
-          <li className='nav-item'>
-            <a href='#Contato' className='nav-links' onClick={closeMobileMenu}>
-              Contato  
-            </a>
-          </li>
-        </ul>
-
+        <button
+          className='menu-toggle'
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={menuOpen}
+        >
+          <span />
+          <span />
+        </button>
       </div>
-            
-    </nav>
-  
-  )
+    </header>
+  );
 }
