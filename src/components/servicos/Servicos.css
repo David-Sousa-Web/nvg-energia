@@ -1,58 +1,196 @@
-.services{
-  background: white;
-  text-align: center;
+.servicos {
+  background: var(--tinta);
+  color: var(--pedra-100);
 }
-.services h1{
-  display: inline-block;
-  text-transform: uppercase;
-  border-bottom: 4px solid #FF5733;
-  font-size: 20px;
-  margin-top: 40px;
+
+.servicos .section-title em {
+  color: var(--ocre);
 }
-.cen{
-  max-width: 1200px;
-  margin: auto;
-  overflow: hidden;
-  padding: 40px;
+
+.servicos .section-lead,
+.eyebrow--light {
+  color: var(--pedra-300);
 }
-.service{
-  display: inline-block;
-  width: calc(100% / 3);
-  margin: 0 -2px;
-  padding: 20px;
-  box-sizing: border-box;
+
+.servicos__head {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: end;
+}
+
+.servicos__body {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(32px, 6vw, 90px);
+  margin-top: clamp(56px, 7vw, 90px);
+  border-top: 1px solid var(--linha-clara);
+}
+
+.servicos__tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.servicos__tab {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 28px 0;
+  border: 0;
+  border-bottom: 1px solid var(--linha-clara);
+  background: none;
+  text-align: left;
   cursor: pointer;
-  transition: 0.4s;
+  color: var(--pedra-400);
+  transition: color 0.3s ease;
 }
-.service:hover{
-  background: #ddd;
+
+.servicos__tab:hover,
+.servicos__tab.is-active {
+  color: var(--pedra-50);
 }
-.service i{
-  color: #FF5733;
-  font-size: 34px;
-  margin-bottom: 24px;
+
+.servicos__num {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--ocre);
 }
-.service h2{
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 400;
-  margin: 0;
-  padding-bottom: 5px;
-  text-align: center;
+
+.servicos__tab-title {
+  flex: 1;
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  font-weight: 600;
+  line-height: 1.1;
 }
-.service p{
-  color: gray;
-  font-size: 15px;
-  font-weight: 500;
+
+.servicos__arrow {
+  font-size: 1.3rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-@media screen and (max-width: 800px) {
-  .service{
-    width: 50%;
-  }
+
+.servicos__tab.is-active .servicos__arrow {
+  opacity: 1;
+  transform: none;
+  color: var(--ocre);
 }
-@media screen and (max-width: 500px) {
-  .service{
-    width: 100%;
+
+.servicos__panel {
+  padding-top: 32px;
+  animation: painel 0.5s ease;
+}
+
+@keyframes painel {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
 }
 
+.servicos__resumo {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--pedra-200);
+  max-width: 560px;
+}
+
+.servicos__lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 36px;
+  background: var(--linha-clara);
+  border: 1px solid var(--linha-clara);
+}
+
+.servicos__lista li {
+  padding: 26px 24px;
+  background: var(--tinta);
+  transition: background 0.3s ease;
+  animation: painel 0.5s ease backwards;
+  animation-delay: calc(var(--n) * 0.07s);
+}
+
+.servicos__lista li:hover {
+  background: var(--tinta-80);
+}
+
+.servicos__lista h3 {
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.servicos__lista h3::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 1px;
+  margin-bottom: 16px;
+  background: var(--ocre);
+}
+
+.servicos__lista p {
+  margin-top: 8px;
+  font-size: 0.93rem;
+  font-weight: 300;
+  color: var(--pedra-300);
+}
+
+.servicos__cta {
+  margin-top: 36px;
+}
+
+@media (max-width: 960px) {
+  .servicos__head,
+  .servicos__body {
+    grid-template-columns: 1fr;
+  }
+
+  .servicos__body {
+    gap: 0;
+  }
+
+  .servicos__tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 28px;
+    scrollbar-width: none;
+  }
+
+  .servicos__tab {
+    width: auto;
+    flex: none;
+    gap: 10px;
+    padding: 22px 0 18px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .servicos__tab.is-active {
+    border-bottom-color: var(--ocre);
+  }
+
+  .servicos__tab-title {
+    font-size: 1.45rem;
+    white-space: nowrap;
+  }
+
+  .servicos__arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .servicos__lista {
+    grid-template-columns: 1fr;
+  }
+
+  .servicos__cta {
+    width: 100%;
+  }
+}

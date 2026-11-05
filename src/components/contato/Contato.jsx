@@ -1,136 +1,101 @@
-import React from 'react'
-import './Contato.css'
+import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import { FiPhone, FiMail, FiMapPin, FiArrowRight, FiCheck } from 'react-icons/fi';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { empresa, whatsappLink } from '../../data/empresa';
+import './Contato.css';
 
 export default function Contato() {
+  const [state, handleSubmit] = useForm('xqkvkjlv');
 
-  const [state, handleSubmit] = useForm("xqkvkjlv");
+  return (
+    <section id='contato' className='section contato'>
+      <div className='container contato__grid'>
+        <div className='contato__info' data-reveal>
+          <span className='eyebrow'>Contato</span>
+          <h2 className='section-title'>
+            Vamos tirar seu <em>projeto do papel</em>?
+          </h2>
+          <p className='section-lead'>
+            Preencha o formulário ou fale direto pelo WhatsApp. Respondemos em até 24 horas úteis.
+          </p>
 
-  if (state.succeeded) {
-      return (
-        <div className='content-contato'>
-          <h1>Contato</h1>
-          <div id="contato-container">
-              <div className='contact-info'>
-                <h4>
-                  Informação contato
-                </h4>
-                <p>preencha o formulário e eu entrarei em contato com você em até 24 horas</p>
-                <div className='icon-text'>
-                  <i class="fa-solid fa-phone" ></i>
-                  <span>(11) 994399940</span>
-                </div>
-                            
-                <div className='icon-text'>
-                  <i class="fa-solid fa-envelope" ></i>
-                  <span>Nvgenergia@gmail.com</span>
-                </div>
+          <ul className='contato__lista'>
+            <li>
+              <FiPhone />
+              <a href={`tel:+${empresa.whatsapp}`}>{empresa.telefone}</a>
+            </li>
+            <li>
+              <FiMail />
+              <a href={`mailto:${empresa.email}`}>{empresa.email}</a>
+            </li>
+            <li>
+              <FiMapPin />
+              <span>{empresa.cidade}</span>
+            </li>
+          </ul>
 
-                <div className='icon-text'>
-                  <i class="fa-solid fa-location-dot" ></i>
-                  <span>Barueri, SP</span>
-                </div>
-
-                <div className='social-media'>
-                  <a href='https://www.instagram.com/david01sousa/' className='icon-circle' target="_blank" rel="noreferrer">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                </div>
-              </div>
-              <div className='center-validation'>
-                <p id='message-validation'>Mensagem enviada com sucesso !</p>
-
-              </div>
+          <div className='contato__social'>
+            <a href={whatsappLink()} target='_blank' rel='noreferrer' className='btn btn--solid'>
+              <FaWhatsapp /> Chamar no WhatsApp
+            </a>
+            <a href={empresa.instagram} target='_blank' rel='noreferrer' className='contato__ig' aria-label='Instagram'>
+              <FaInstagram />
+            </a>
           </div>
         </div>
-      );
-  }
-  return (
-    <>  
-        <section id='Contato' className='content-contato'>
-            <h1>Contato</h1>
-            <div id="contato-container">
-              <div className='contact-info'>
-                <h4>
-                  Informação contato
-                </h4>
-                <p>preencha o formulário e eu entrarei em contato com você em até 24 horas</p>
 
-                <div className='icon-text'>
-                  <i class="fa-solid fa-phone" ></i>
-                  <span>(11) 994399940</span>
-                </div>
-
-                <div className='icon-text'>
-                  <i class="fa-solid fa-envelope" ></i>
-                  <span>Nvgenergia@gmail.com</span>
-                </div>
-
-                <div className='icon-text'>
-                  <i class="fa-solid fa-location-dot" ></i>
-                  <span>Barueri, SP</span>
-                </div>
-                <div className='social-media'>
-                  <a href='https://www.instagram.com/nvg.energia/' className='icon-circle' target="_blank" rel="noreferrer">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>                 
-                </div>
-              </div>
-              <form onSubmit={handleSubmit}>
-                <div className='form-part'>
-                  <div className='form-group'>
-                    <label>Nome Completo</label>
-                    <input id='nome' type='text' name='Name' required="true"/>
-                    <ValidationError
-                      prefix='Nome'
-                      field='name'
-                      errors={state.errors}                      
-                    />
-                  </div>
-                </div>
-                <div className='form-part'>
-                  <div className='form-group'>
-                    <label>E-mail</label>
-                    <input id='email' type='email' name='email' required="true"/>
-
-                    <ValidationError 
-                      prefix="Email" 
-                      field="email"
-                      errors={state.errors}
-                    />
-                  </div>
-                  <div className='form-group'>                   
-                    <label>Telefone</label>
-                    <input id='telefone' type='tel' name='telefone' required="true"/>
-
-                    <ValidationError 
-                      prefix='Telefone'
-                      field ="phone"
-                      errors={state.errors}
-                    />
-                  </div>
-                </div>
-                <div className='form-part'>
-                  <div className='form-group'>
-                    <label>Mensagem</label>
-                    <textarea id='message' name='message'/>
-
-                    <ValidationError 
-                      prefix="Message" 
-                      field="message"
-                      errors={state.errors}
-                    />
-                  </div>
-                </div>
-                <div className='col'>
-                  <div className='form-group-button'>
-                    <button className='primary' type="submit" disabled={state.submitting}>Enviar</button>
-                  </div>
-                </div>
-                {/*<div className='message-send'>{result ? <Result/> : null}</div>*/}
-              </form>
+        <div className='contato__card' data-reveal style={{ '--delay': '0.15s' }}>
+          {state.succeeded ? (
+            <div className='contato__sucesso' role='status'>
+              <span className='contato__sucesso-icone'><FiCheck /></span>
+              <h3>Mensagem enviada!</h3>
+              <p>Obrigado pelo contato. Em breve nossa equipe retorna para você.</p>
             </div>
-         </section>
-    </>
-  )
+          ) : (
+            <form className='form' onSubmit={handleSubmit}>
+              <div className='form__campo form__campo--full'>
+                <label htmlFor='nome'>Nome completo</label>
+                <input id='nome' type='text' name='nome' autoComplete='name' required />
+                <ValidationError prefix='Nome' field='nome' errors={state.errors} className='form__erro' />
+              </div>
+
+              <div className='form__campo'>
+                <label htmlFor='email'>E-mail</label>
+                <input id='email' type='email' name='email' autoComplete='email' required />
+                <ValidationError prefix='E-mail' field='email' errors={state.errors} className='form__erro' />
+              </div>
+
+              <div className='form__campo'>
+                <label htmlFor='telefone'>Telefone</label>
+                <input id='telefone' type='tel' name='telefone' autoComplete='tel' required />
+                <ValidationError prefix='Telefone' field='telefone' errors={state.errors} className='form__erro' />
+              </div>
+
+              <div className='form__campo form__campo--full'>
+                <label htmlFor='area'>Área de interesse</label>
+                <select id='area' name='area' defaultValue=''>
+                  <option value='' disabled>Selecione</option>
+                  <option>Arquitetura (projeto ou reforma)</option>
+                  <option>Engenharia elétrica / geradores</option>
+                  <option>Laudos, NR10 e segurança do trabalho</option>
+                  <option>Outro assunto</option>
+                </select>
+              </div>
+
+              <div className='form__campo form__campo--full'>
+                <label htmlFor='mensagem'>Mensagem</label>
+                <textarea id='mensagem' name='mensagem' rows='4' />
+                <ValidationError prefix='Mensagem' field='mensagem' errors={state.errors} className='form__erro' />
+              </div>
+
+              <button className='btn btn--solid form__enviar' type='submit' disabled={state.submitting}>
+                {state.submitting ? 'Enviando…' : 'Enviar mensagem'} <FiArrowRight />
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
+    </section>
+  );
 }

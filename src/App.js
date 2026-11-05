@@ -1,27 +1,30 @@
 import './App.css';
-import Navbar from './components/header/Header'
-import HomeContent from './components/homecontent/HomeContent.jsx'
-import {BrowserRouter as Router} from 'react-router-dom'
-import Sobre from './components/quemsomos/Sobre';
+import Header from './components/header/Header';
+import Hero from './components/hero/Hero';
+import Sobre from './components/sobre/Sobre';
 import Servicos from './components/servicos/Servicos';
+import Processo from './components/processo/Processo';
+import Projetos from './components/projetos/Projetos';
 import Contato from './components/contato/Contato';
 import Footer from './components/footer/Footer';
-import Projetos from './components/projetos/Projetos';
+import useReveal from './hooks/useReveal';
 
 function App() {
+  useReveal();
+
   return (
     <>
-      <Router>
-        <Navbar />
-        <HomeContent/>
-        <Sobre/>
-        <Servicos/>
-        <Projetos/>
-        <Contato/>
-        <Footer/>
-      </Router>    
+      <Header />
+      <main>
+        <Hero />
+        <Sobre />
+        <Servicos />
+        <Processo />
+        <Projetos />
+        <Contato />
+      </main>
+      <Footer />
     </>
   );
 }
 export default App;
-
